@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.wrap {
+    max-width: 850px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 70px;
+	font-weight: bold;
+    margin: 0 0 50px;
+    min-height: 250px;
+}
+
+a {
+    color: inherit;
+	text-decoration: underline;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: #262626;
+    color: #fff;
+    height: 90%;
+}
+
+header .wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -172px;
+    margin-left: -425px;
+}
+
+.main {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+
+section {
+    padding: 100px 0;
+    background: #D9D9D9;
+}
+
+section:nth-of-type(even) {
+    background: #262626;
+    color: #fff;
+}
+
+h2 {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+p {
+    font-size: 41px;
+    line-height: 1.2;
+    margin: 15px 0 30px;
+}
+
+ol {
+    counter-reset: numbering;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    counter-increment: numbering;
+    font-size: 50px;
+}
+
+li:before {
+    content: counter(numbering, decimal-leading-zero);
+    font-size: 25px;
+    padding-right: 15px;
+    vertical-align: super;
+}
+
+
+@media only screen and (max-width: 850px) {
+    header {
+        position: static;
+        height: auto;
+        padding: 50px 0;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    header .wrap {
+        position: unset;
+        margin: 0 auto;
+    }
+
+    .main {
+        position: unset;
+    }
+
+    h1 {
+        font-size: 45px;
+        min-height: unset;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    li {
+        font-size: 30px;
+    }
+
+    li:before {
+        font-size: 20px;
+        padding-right: 10px;
+    }
+}
