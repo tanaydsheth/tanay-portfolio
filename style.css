@@ -82,6 +82,7 @@ ol {
 li {
     counter-increment: numbering;
     font-size: 50px;
+    margin-left: 30px;
 }
 
 li:before {
@@ -89,6 +90,7 @@ li:before {
     font-size: 25px;
     padding-right: 15px;
     vertical-align: super;
+    margin-left: -30px;
 }
 
 .img-long {
@@ -104,6 +106,7 @@ li:before {
     overflow: hidden;
     min-height: 250px;
     color: #fff;
+    position: relative;
 }
 
 .subcats:last-of-type {
@@ -126,14 +129,20 @@ li:before {
 
 .subcats .tilt {
     width: 350px;
+    position: absolute;
+    right: 0;
+    top: 0;
     display: block;
     transform: rotateY(-25deg) rotateX(15deg) rotateZ(8deg);
-    float: right;
     margin-right: 75px;
     margin-top: 40px;
     margin-bottom: -270px;
     transition: .5s all;
     box-shadow: 25px 25px 30px rgba(0, 0, 0, .3);
+}
+
+.subcats .hoverOnlyUp {
+    margin-right: 40px;
 }
 
 .subcats .swap {
@@ -153,9 +162,14 @@ li:before {
 
 @media only screen and (max-width: 850px) {
     header {
-        position: static;
-        height: auto;
+        position: relative;
+        height: 450px;
         padding: 50px 0;
+    }
+
+    #fold a {
+        position: absolute;
+        bottom: 50px;
     }
 
     section {
@@ -189,12 +203,42 @@ li:before {
         padding-right: 10px;
     }
 
+    .img-long {
+        background-position: center;
+    }
+
     .subcats .tilt {
-        float: none;
         margin: 0;
+        position: static;
     }
 
     .subcats p {
         max-width: 100%;
+    }
+
+    .subcats .hoverOnlyUp {
+        width: 275px;
+        transform: rotateY(-10deg) rotateX(6deg) rotateZ(5deg);
+        margin-top: 15px;
+    }
+
+    .subcats:hover .hoverOnlyUp {
+        transform: rotateY(-8deg) rotateX(4deg) rotateZ(4deg);
+    }
+
+    #sub-program img {
+        display: none;
+    }
+
+    #sub-onepager p {
+        max-width: 65%;
+    }
+
+    #sub-onepager img {
+        width: 200px;
+        margin-right: -75px;
+        margin-top: 75px;
+        position: absolute;
+        transform: rotateY(-19deg) rotateX(12deg) rotateZ(7deg) translateY(-50px);
     }
 }
